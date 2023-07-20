@@ -13,3 +13,7 @@ const car = carMarkers[0];
 carMarkers.map((car: string): string => {
   return car;
 });
+
+// Flexible types
+const importantDates: (Date | string)[] = [];
+importantDates.push("2023-07-10");
