@@ -9,16 +9,20 @@ class Vehicle {
 const vehicle = new Vehicle("orange");
 console.log(vehicle.color);
 
-// class Car extends Vehicle {
-//   private drive(): void {
-//     console.log("=====>>>>> from method drive() in class Car");
-//   }
+class Car extends Vehicle {
+  constructor(public wheels: number, color: string) {
+    super(color);
+  }
 
-//   public startDrivingProcess(): void {
-//     this.drive();
-//     this.honk();
-//   }
-// }
+  private drive(): void {
+    console.log("=====>>>>> from method drive() in class Car");
+  }
 
-// const car = new Car();
-// car.startDrivingProcess();
+  public startDrivingProcess(): void {
+    this.drive();
+    this.honk();
+  }
+}
+
+const car = new Car(4, "red");
+car.startDrivingProcess();
