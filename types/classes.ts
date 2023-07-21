@@ -1,19 +1,24 @@
 class Vehicle {
+  constructor(public color: string) {}
+
   protected honk(): void {
     console.log("from method honk() in class Vehicle");
   }
 }
 
-class Car extends Vehicle {
-  private drive(): void {
-    console.log("=====>>>>> from method drive() in class Car");
-  }
+const vehicle = new Vehicle("orange");
+console.log(vehicle.color);
 
-  public startDrivingProcess(): void {
-    this.drive();
-    this.honk();
-  }
-}
+// class Car extends Vehicle {
+//   private drive(): void {
+//     console.log("=====>>>>> from method drive() in class Car");
+//   }
 
-const car = new Car();
-car.startDrivingProcess();
+//   public startDrivingProcess(): void {
+//     this.drive();
+//     this.honk();
+//   }
+// }
+
+// const car = new Car();
+// car.startDrivingProcess();
