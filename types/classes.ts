@@ -1,19 +1,19 @@
 class Vehicle {
-  drive(): void {
-    console.log("from method drive() in class Vehicle");
-  }
-
-  honk(): void {
+  protected honk(): void {
     console.log("from method honk() in class Vehicle");
   }
 }
 
 class Car extends Vehicle {
-  drive(): void {
+  private drive(): void {
     console.log("=====>>>>> from method drive() in class Car");
+  }
+
+  public startDrivingProcess(): void {
+    this.drive();
+    this.honk();
   }
 }
 
 const car = new Car();
-car.drive();
-car.honk();
+car.startDrivingProcess();
